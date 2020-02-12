@@ -1,0 +1,63 @@
+2.0.0.2 2019-07-14 - Added searchable client grid.
+                   - Charge fields convicted, eligible, and please_expunge are now boolean and can have set, no, and yes values.
+                   - Converted text date fields to date, DOB, License expiration date, and release date.
+                   - Rename clients Status to Notes
+                   - Added CMS client and matter numbers to client
+                   - Cleaned up README.md
+                   - Setup test data including seeders for test data.
+                   - Table names are now plural.
+
+2.0.0.3.1 2019-07-25 - Now passes back CMS id to front end
+                     - Adjusted date for seeding
+
+2.0.0.4.0 2019-10-?? - Statutes are now a lookup table
+                         - Original statutes fields are now kept as imported_*
+                         - If charge.statute_id is 0 we display the imported_* fields
+                         - Added Undetermined Eligable to statutes_eligibilities
+                         - Now adding statute through FldStatute pop up form uses statutes-eligibility table value
+                         - Added Undetermined Eligable as a Statutes eligibility option
+                         - Now convert charges imported_citation to statute_id FK
+                         - Statutes: show screen now lists charges used in, and
+                           delete option only shows when statute is not used in a charge
+
+3.0.0.0.0 2019-10-28 - Moving to new version
+
+3.0.0.1.0 2019-11-04 - Changes to Applicant, Case, Charges, Statutes
+3.0.0.1.1 2019-11-04 - Had to merge in codeforkc chagnes
+
+3.1.0.0.0 2019-11-12 - Source has been added to case.
+                       Case and Charge can be deleted, but UI issue
+                       Charge must have a value in the imported statue or statute_id #109
+                       Make case number required, and description (name) not required. #93
+                       Now all note fields are WYSIWYG and display as rendered HTML
+                       add options to get superseded and eligibility
+                       
+3.1.1.0.0 2019-11-13 - Fix deleting existing and unsaved case and charge records
+                       Cleanup up home page
+
+3.1.2.0.0 2019-11-13 - Display Statute now shows link to MO Revisor #74
+
+3.1.3.0.0 2019-11-13 - Can now load applicants history from spreadsheet
+
+3.1.4.0.0 2019-11-24 - Cases are now sorted by date, the best we can do since some are in text format
+                       Added status to applicants
+                       Backed out edit between charge's statute_id and imported_statute
+                       Fixed permission checking in applicant grid.
+
+3.1.5.0.0 2019-12-01 - Resolved loading spread sheet issues.
+                       Display's applicant status
+                       Charge statute is only displayed if one is set
+
+3.1.6.0.0 2019-12-17 - Added only tables for Jurisdiction and type, need to incorporate in.
+                       Highlight case number of years ago #123
+                       Show Source field in case Summary and Detail screens #127
+                       Change name of Revisor link to “Mo Statutes” #124
+                       Add link to Mo Expungement Statute #128
+                       Cannow navigate between Edit and View, button upper right hand corner
+                       Permission is now delete not destroy
+                       Resolves Cannot delete an applicant #141
+3.1.7.0.0 2020-02-04 - Cleanup on Applicant history and grid
+                       Added Jurisdiction and Jurisdiction type to Statutes
+                       Allow statute number to be null
+
+                       
