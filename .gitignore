@@ -18,3 +18,5 @@ backend/npm-debug.log
 backend/yarn-error.log
 backend/data
 backend/.DS_Store
+
+frontend/node_modules
