@@ -16,8 +16,8 @@ class UsersTableSeeder extends Seeder
         $faker = Faker::create();
 
         $user = \App\User::create([
-            'email' => 'paulb@savagesoft.com',
-            'name' => 'Paul Barham',
+            'email' => 'shawon.crosen@gmail.com',
+            'name' => 'Shawon Crosen',
             'password' => bcrypt(env('TEST_USER_PASSWORD', 'secret'))
         ]);
         $user->assignRole('super-admin');
@@ -53,16 +53,16 @@ class UsersTableSeeder extends Seeder
         $user->assignRole('read-only');
 
         $user = \App\User::create([
-            'email' => 'camilo.snapp@gmail.com',
-            'name' => 'Camilo Snapp',
+            'email' => 'mohith@openstl.com',
+            'name' => 'Mohith Rao',
             'password' => bcrypt(env('TEST_USER_PASSWORD', $faker->unique()->safeEmail))
         ]);
         $user->assignRole('super-admin');
 
-        factory(App\User::class, 40)->create()->each(function ($user) {
-            $role = \App\Role::inRandomOrder()->first();
-            $user->assignRole($role->name);
-        });
+        // factory(App\User::class, 40)->create()->each(function ($user) {
+        //     $role = \App\Role::inRandomOrder()->first();
+        //     $user->assignRole($role->name);
+        // });
 
     }
 }

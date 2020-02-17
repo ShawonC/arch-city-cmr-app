@@ -76,7 +76,7 @@ class ApplicantController extends Controller
     {
 
         if (!Auth::user()->can('applicant index')) {
-            \Session::flash('flash_error_message', 'You do not have access to Applicantss.');
+            \Session::flash('flash_error_message', 'You do not have access to Applicants.');
             return Redirect::route('home');
         }
 
@@ -110,7 +110,7 @@ class ApplicantController extends Controller
     {
 
         if (!Auth::user()->can('applicant add')) {  // TODO: add -> create
-            \Session::flash('flash_error_message', 'You do not have access to add a Applicants.');
+            \Session::flash('flash_error_message', 'You do not have access to add Applicants.');
             if (Auth::user()->can('applicant index')) {
                 return Redirect::route('applicant.index');
             } else {
