@@ -28,6 +28,7 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::post('/applicants/{applicant_id}/convictions','API\ConvictionController@add')->name('applicant.conviction.add');
     Route::get('/applicants/{applicant_id}/convictions','API\ConvictionController@indexByClient')->name('applicant.conviction.index_by_client');
     Route::post('/applicants/{applicant_id}/convictions/{conviction_id}/charges','API\ChargeController@add');
+    Route::delete('/applicants/{applicant_id}', 'API\ApplicantController@destroy')->name('applicant.delete');
 
     Route::get('/applicants/v1.0.0','API\ApplicantController@index_v1_0_1')->name('applicant.conviction.index_v1_0_1');
 
