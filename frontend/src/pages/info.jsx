@@ -98,6 +98,7 @@ export default function Info() {
           </ol>
         </div>
       </Hidden>
+      <div className='bottom-spacer' />
     </div>
   );
 }

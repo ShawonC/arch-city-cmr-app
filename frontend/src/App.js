@@ -12,12 +12,43 @@ import ScrollToTop from './components/logic/scrollToTop'
 
 import Info from './pages/info';
 import Eligiblity from './pages/eligibility';
-import NoMatch from './pages/noMatch'
+import Login from './pages/login';
+import UserView from './pages/userView';
+import NoMatch from './pages/noMatch';
 
 const homePath = '/';
 
 // Add new page components here:
 const routes = [
+  {
+    path: '/login',
+    label: 'Login',
+    component: Login
+  },
+  {
+    path: '/userview',
+    label: 'User View',
+    component: UserView
+  },
+  {
+    path: '/info',
+    label: 'Info',
+    component: Info
+  },
+  {
+    path: '/eligibility',
+    label: 'Eligiblity',
+    component: Eligiblity
+  }
+  
+]
+
+const headerRoutes = [
+  {
+    path: '/userview',
+    label: 'User View',
+    component: UserView
+  },
   {
     path: '/info',
     label: 'Info',
@@ -38,7 +69,7 @@ export default function App() {
         <div className='header'>
           <h1>Clear My Missouri Record</h1>
           <div align='center'>
-            {routes.map((route) => (
+            {headerRoutes.map((route) => (
               <HeaderLink 
                 activeOnlyWhenExact={true}
                 to={route.path}
@@ -62,7 +93,6 @@ export default function App() {
           />
           <Route component={NoMatch} />
         </Switch>
-        <div className='bottom-spacer' />
         <div className='footer'>
           <div className='footer-content'>footer placeholder</div>
         </div>
