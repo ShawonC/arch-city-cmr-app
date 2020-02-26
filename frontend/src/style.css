@@ -183,10 +183,6 @@ body{
 
 /*login styling*/
 
-.login-screen{
-    background-color: green;
-}
-
 .login-window {
     position: absolute;
     padding: 60px 60px;
@@ -194,10 +190,11 @@ body{
     top: 50%;
     transform: translate(-50%, -50%);
     background-color:#e2e9f5;
+    max-width: 400px;
 }
 
-.login-prompt{
-    text-align: right;
+.login-button{
+    text-align: center;
 }
 .login-box {
     background-color: white;

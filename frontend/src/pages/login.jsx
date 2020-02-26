@@ -1,57 +1,52 @@
 import React from 'react';
-import { Box, TextField, Grid } from '@material-ui/core';
+import { Box, TextField, Grid, Button} from '@material-ui/core';
 
 
 export default function Login() {
 	return (
-    <div className='login-screen'>
-      <Box className='login-window'
-        border={1}>
-          <Grid container spacing={3}>
-            <Grid item xs={12}>
+    <Box className='login-window'
+      border={1}>
+        <Grid container spacing={3}>
+          <Grid item xs={12}>
+          <TextField className='login-box'
+            placeholder='Username'
+            variant='outlined'
+            fullWidth='true'>
+              placeholder
+          </TextField>
+          </Grid>
+          <Grid item xs={12}>
             <TextField className='login-box'
-              placeholder='Username'
+              placeholder='Password'
               variant='outlined'
               fullWidth='true'>
                 placeholder
             </TextField>
-            </Grid>
-            <Grid item xs={12}>
-              <TextField className='login-box'
-                placeholder='Password'
-                variant='outlined'
-                fullWidth='true'>
-                  placeholder
-              </TextField>
-            </Grid>
           </Grid>
-      </Box>
-    </div>
+          <Grid item xs={2}></Grid>
+          <Grid item xs={8}>
+            <Button fullWidth='true'
+              variant="contained"
+              color="primary"
+              >
+              Login
+            </Button>
+          </Grid>
+          <Grid item xs={2}></Grid>
+          <Grid item xs={6}>
+            <Button variant='text'
+              fullWidth='true'>
+              Create Account
+            </Button>
+          </Grid>
+          <Grid item xs={6}>
+            <Button variant='text'
+              fullWidth='true'>
+              Forgot Password?
+            </Button>
+          </Grid>
+        </Grid>
+    </Box>
   );
 };
 
-/*
-<Grid container spacing={3}>
-            <Grid classname='login-prompt' 
-              item xs={4}>
-              Username:
-            </Grid>
-            <Grid item xs={8}>
-            <TextField className='login-box'
-              placeholder='Username'
-              variant='outlined'>
-                placeholder
-            </TextField>
-            </Grid>
-            <Grid classname='login-prompt' 
-              item xs={4}>
-              Password:
-            </Grid>
-            <Grid item xs={8}>
-              <TextField className='login-box'
-                placeholder='Password'
-                variant='outlined'>
-                  placeholder
-              </TextField>
-            </Grid>
-          </Grid>*/
