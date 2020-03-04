@@ -12,7 +12,7 @@ import ScrollToTop from './components/logic/scrollToTop'
 import Info from './pages/info';
 import Eligiblity from './pages/eligibility';
 import Login from './pages/login';
-import UserView from './pages/userView';
+import dashboard from './pages/dashboard';
 import NoMatch from './pages/noMatch';
 import NewUser from './pages/newUser'
 
@@ -26,9 +26,9 @@ const routes = [
     component: Login
   },
   {
-    path: '/userview',
-    label: 'User View',
-    component: UserView
+    path: '/application',
+    label: 'Dashboard',
+    component: dashboard
   },
   {
     path: '/info',
@@ -50,9 +50,9 @@ const routes = [
 
 const headerRoutes = [
   {
-    path: '/userview',
-    label: 'User View',
-    component: UserView
+    path: '/application',
+    label: 'Dashboard',
+    component: dashboard
   },
   {
     path: '/info',
