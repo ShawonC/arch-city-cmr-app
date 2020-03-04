@@ -3,8 +3,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Redirect,
-  Link
+  Redirect
 } from "react-router-dom";
 
 import HeaderLink from './components/displays/headerLink'
@@ -15,6 +14,7 @@ import Eligiblity from './pages/eligibility';
 import Login from './pages/login';
 import UserView from './pages/userView';
 import NoMatch from './pages/noMatch';
+import NewUser from './pages/newUser'
 
 const homePath = '/';
 
@@ -39,6 +39,11 @@ const routes = [
     path: '/eligibility',
     label: 'Eligiblity',
     component: Eligiblity
+  },
+  {
+    path: '/newuser',
+    label: 'New User',
+    component: NewUser
   }
   
 ]

@@ -200,3 +200,14 @@ body{
     background-color: white;
 }
 
+/*new user styling*/
+
+.new-user {
+    position: absolute;
+    padding: 60px 60px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color:#e2e9f5;
+    max-width: 400px;
+}
