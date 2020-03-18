@@ -1,0 +1,37 @@
+version: '3'
+services:
+
+  app:
+    image: archcity/cmr-app-backend:latest
+    volumes:
+      - /var/www/storage
+    env_file: '.env'
+    environment:
+      - "DB_HOST=database"
+      - "REDIS_HOST=cache"
+
+  web:
+    image: archcity/web:latest
+    volumes:
+      - "${LE_DIR}:/etc/letsencrypt/"
+    ports:
+      - 80:80
+      - 443:443
+
+  database:
+    image: mysql:5.7.29
+    volumes:
+      - dbdata:/var/lib/mysql
+    environment:
+      - "MYSQL_DATABASE=homestead"
+      - "MYSQL_USER=homestead"
+      - "MYSQL_PASSWORD=secret"
+      - "MYSQL_ROOT_PASSWORD=secret"
+    ports:
+      - "33061:3306"
+
+  cache:
+    image: redis:5.0.7-alpine
+
+volumes:
+  dbdata:
