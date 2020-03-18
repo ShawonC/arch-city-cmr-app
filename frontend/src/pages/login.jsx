@@ -3,10 +3,13 @@ import { Box, TextField, Grid, Button } from '@material-ui/core';
 import { withRouter } from 'react-router-dom';
 
 
+
 class Login extends Component{
 
-  newUserRoute(){
-    this.props.history.push("/newuser")
+ // <Route newUserPath='/newuser' component={newUser}/>
+
+  newUserRoute(path){
+    this.props.history.push(path)
   }
 
   render(){
@@ -43,7 +46,7 @@ class Login extends Component{
             <Grid item xs={6}>
               <Button variant='text'
                 fullWidth='true'
-                onClick={this.newUserRoute.bing(this)}>
+                onClick={() => this.newUserRoute('/newuser')}>
                 Create Account
               </Button>
             </Grid>
