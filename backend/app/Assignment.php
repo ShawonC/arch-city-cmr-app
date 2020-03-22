@@ -16,12 +16,12 @@ class Assignment extends Model
      * fillable - attributes that can be mass-assigned
      */
     protected $fillable = [
-            'id',
-            'name',
-            'applicant_id',
-            'user_id',
-            'deleted_at',
-        ];
+        'id',
+        'name',
+        'applicant_id',
+        'user_id',
+        'deleted_at',
+    ];
 
     protected $hidden = [
         'active',

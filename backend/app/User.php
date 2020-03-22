@@ -94,9 +94,9 @@ class User extends Authenticatable
     {
         return self::buildBaseGridQuery($column, $direction, $keyword,
             [ 'id',
-                    'name',
-                    'email',
-                    'active',
+                'name',
+                'email',
+                'active',
             ])
         ->paginate($per_page);
     }
