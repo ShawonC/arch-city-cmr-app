@@ -18,25 +18,25 @@ export const steps = [
     <li>removes a few of the consequences caused by the criminal records, e.g. loss of right to carry a firearm</li></ul></p>
     `,
   },
-  {
-    navName: 'Limitations of Expungement',
-    headerText: 'Waiting Period Before Records Can Be Expunged',
-    bodyText: 
-    `<p><b>Felony:</b> 7 years after all incarceration, probation, and parole related to that felony
-    You cannot have any felony convictions after the one you are trying to expunge.</p>
+  // {
+  //   navName: 'Limitations of Expungement',
+  //   headerText: 'Waiting Period Before Records Can Be Expunged',
+  //   bodyText: 
+  //   `<p><b>Felony:</b> 7 years after all incarceration, probation, and parole related to that felony
+  //   You cannot have any felony convictions after the one you are trying to expunge.</p>
   
-    <p><b>Misdemeanor and Ordinance Violations:</b> 3 years after all incarceration, probation, and parole related to the misdemeanor 
-    You cannot have any convictions after the one you are trying to expunge.</p>
+  //   <p><b>Misdemeanor and Ordinance Violations:</b> 3 years after all incarceration, probation, and parole related to the misdemeanor 
+  //   You cannot have any convictions after the one you are trying to expunge.</p>
   
-    <p><b>Infractions:</b> 3 years after all fines are paid.</p>
+  //   <p><b>Infractions:</b> 3 years after all fines are paid.</p>
 
-    <p><b>Minor in possession of alcohol:</b> 1 year after turning 21 years old
-    You cannot have any alcohol-related  convictions after the one you are trying to expunge.</p>
+  //   <p><b>Minor in possession of alcohol:</b> 1 year after turning 21 years old
+  //   You cannot have any alcohol-related  convictions after the one you are trying to expunge.</p>
   
-    <p><b>DUI vehicle and boat:</b> 10 years for a first offense DUI after all incarceration, probation, and parole related to the DUI
-    You cannot have any alcohol-related  convictions after the one you are trying to expunge.</p>  
-  `,
-  },
+  //   <p><b>DUI vehicle and boat:</b> 10 years for a first offense DUI after all incarceration, probation, and parole related to the DUI
+  //   You cannot have any alcohol-related  convictions after the one you are trying to expunge.</p>  
+  // `,
+  // },
   { 
     navName: 'Eligibility',
     headerText: 'Can My Record Be Expunged?',
