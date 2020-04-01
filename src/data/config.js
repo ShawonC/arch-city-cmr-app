@@ -1,22 +1,15 @@
 export const steps = [
   { 
-    navName: 'Why?',
+    navName: 'What',
     headerText: 'Why Should I Remove My Record?',
     bodyText: 
-    `<h3>Expunging criminal records can make it easier to:</h3>
-    <p><ul><li>Apply for jobs</li>
-    <li>Rent a home</li>
-    <li>Go to college</li>
-    <li>Open a bank account</li>
-    <li>Vote</li></ul></p>
-    
-    <h3>Expunging criminal records does not:</h3>
-    <p><ul><li>Remove your records from private court records</li>
-    <li>Prevent a crime from being recognized as a prior conviction in court</li></ul></p>
+    `<p>In Missouri, expungement is the legal process in which criminal records, like police reports and indictments, are sealed from state government records. </p>
+     <p>Expungement does not result in the record being erased or destroyed. There are ways in which the record may be accessed, e.g. applying for a nursing license.</p>
+     <p>Expungement does not remove any record or mention of the criminal activity from the public, e.g. a news article mentioning an arrest would not be changed.</p>
     `,
   },
   { 
-    navName: 'What?',
+    navName: 'Benefits of Expungement',
     headerText: 'What Records Can Be Expunged?',
     bodyText: 
     `<h3>In Missouri you can expunge:</h3> 
@@ -26,7 +19,7 @@ export const steps = [
     `,
   },
   {
-    navName: 'Waiting Period',
+    navName: 'Limitations of Expungement',
     headerText: 'Waiting Period Before Records Can Be Expunged',
     bodyText: 
     `<p><b>Felony:</b> 7 years after all incarceration, probation, and parole related to that felony
@@ -95,7 +88,7 @@ export const steps = [
     `,
   },
   { 
-    navName: 'Submit Paperwork',
+    navName: 'Create your Petition',
     headerText: 'Create and Submit your Petition',
     bodyText: 
     `<p>Once you have gathered enough information, you can create your petition. You can get a copy of the petition (add link here) to print and fill out, or you can fill it out online and print it. When your petition is complete take it to an expungement clinit or expungement center. You can find a list of these (another link to add here).</p>
