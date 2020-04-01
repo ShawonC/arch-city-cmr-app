@@ -149,15 +149,15 @@ class User extends Authenticatable
         return $query;
     }
 
-        /**
-         * Get export/Excel/download data query to send to Excel download library
-         *
-         * @param $per_page
-         * @param $column
-         * @param $direction
-         * @param string $keyword
-         * @return mixed
-         */
+    /**
+     * Get export/Excel/download data query to send to Excel download library
+     *
+     * @param $per_page
+     * @param $column
+     * @param $direction
+     * @param string $keyword
+     * @return mixed
+     */
 
     static function exportDataQuery(
         $column,

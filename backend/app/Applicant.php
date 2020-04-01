@@ -82,6 +82,11 @@ class Applicant extends Model
         return $this->morphMany(History::class, 'historyable');
     }
 
+    public function frontendUser()
+    {
+        return $this->belongsTo('App\FrontendUser');
+    }
+
     // this is a recommended way to declare event handlers
     public static function boot()
     {

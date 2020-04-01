@@ -30,7 +30,7 @@ class FrontendUser extends Model
 
     public function applicant()
     {
-        return $this->belongsTo('App\Applicant');
+        return $this->hasOne('App\Applicant');
     }
 
     public function add()
@@ -117,7 +117,16 @@ class FrontendUser extends Model
                 break;
         }
 
-        
-    }
+        $query = FrontendUser::select($columns)
+            ->orderBy($column, $direction);
+        $query->orderBy('name', 'ASC'); // Secondary sort criteria of name
 
+        if ($keyword) {
+            $query->where(function($query) use ($keyword) {
+                $query->where('name', 'like', '%' . $keyword . '%')
+                    ->orWhere('email', 'like', '%' . $keyword . '%');
+            });
+        }
+        return $query;
+    }
 }
