@@ -1,7 +1,7 @@
 export const steps = [
   { 
     navName: 'What',
-    headerText: 'Why Should I Remove My Record?',
+    headerText: 'What does Expungement mean?',
     bodyText: 
     `<p>In Missouri, expungement is the legal process in which criminal records, like police reports and indictments, are sealed from state government records. </p>
      <p>Expungement does not result in the record being erased or destroyed. There are ways in which the record may be accessed, e.g. applying for a nursing license.</p>
@@ -10,12 +10,12 @@ export const steps = [
   },
   { 
     navName: 'Benefits of Expungement',
-    headerText: 'What Records Can Be Expunged?',
+    headerText: 'Why Should I Remove My Record?',
     bodyText: 
-    `<h3>In Missouri you can expunge:</h3> 
-    <p><ul><li>One felony </li>
-    <li>Two misdemeanors OR ordinance violations</li>
-    <li>Any number of infractions</li></ul></p>
+    `<h3>Being granted an expungement:</h3> 
+    <p><li>allows a person to answer “no” to certain inquiries of criminal records, e.g. job and housing applications.</li>
+    <li>makes the records, as they exist within the state government, inaccessible to public view. </li>
+    <li>removes a few of the consequences caused by the criminal records, e.g. loss of right to carry a firearm</li></ul></p>
     `,
   },
   {
