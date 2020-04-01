@@ -41,11 +41,22 @@ export const steps = [
     navName: 'Eligibility',
     headerText: 'Can My Record Be Expunged?',
     bodyText: 
-    `<h3>You can be disqualified for expungement if:</h3>
-    <p><ul><li>You have crimnal charges pending</li>
-    <li>You have any unpaid outstanding fines</li>
-    <li>You have not fulfilled any court obligations</li>
-    <li>Your habits and behavior show that you are a threat to public safety</li></ul></p>
+    `<p>Records relating to some offenses can never be expunged. Ineligible crimes include: Class A felonies, dangerous felonies, offenses that require you to register as a sex offender, and any crime where death is an element. See full list of excluded offenses</p>
+     
+     <p>A certain amount of time must pass after the successful completion of all requirements of the case, including prison, jail, parole, probation, payment of restitution, etc.
+     <ul><li>If your case involved a felony offense, you must wait seven years</li>
+     <li>If your case involved a misdemeanor, you must wait three years</li>
+     <li>If your case involved a municipal offense, you must wait three years</li></ul></p>
+     
+     <p>For a certain amount of time, you must not have been convicted for any crimes committed after the offense seeking expungement
+     <ul><li>If you are applying to expunge a felony record,  the last seven years</li>
+     <li>If you are applying to expunge a misdemeanor record, the last three years</li>
+     <li>If you are applying to expunge a municipal record, the last three years</li></ul></p>
+
+     <p>You may have only one felony and two misdemeanor records expunged in a lifetime. </p>
+
+     <p>The court determines that your habits and behavior show that you are not a threat to public safety.</p>
+
     `,
   },
   { 
