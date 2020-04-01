@@ -13,7 +13,7 @@ export const steps = [
     headerText: 'Why Should I Remove My Record?',
     bodyText: 
     `<h3>Being granted an expungement:</h3> 
-    <p><li>allows a person to answer “no” to certain inquiries of criminal records, e.g. job and housing applications.</li>
+    <p><ul><li>allows a person to answer “no” to certain inquiries of criminal records, e.g. job and housing applications.</li>
     <li>makes the records, as they exist within the state government, inaccessible to public view. </li>
     <li>removes a few of the consequences caused by the criminal records, e.g. loss of right to carry a firearm</li></ul></p>
     `,
