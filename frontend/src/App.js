@@ -10,7 +10,7 @@ import HeaderLink from './components/displays/headerLink'
 import ScrollToTop from './components/logic/scrollToTop'
 
 import Info from './pages/info';
-import Eligiblity from './pages/eligibility';
+import Questionnaire from './pages/questionnaire';
 import Login from './pages/login';
 import dashboard from './pages/dashboard';
 import NoMatch from './pages/noMatch';
@@ -36,9 +36,9 @@ const routes = [
     component: Info
   },
   {
-    path: '/eligibility',
-    label: 'Eligiblity',
-    component: Eligiblity
+    path: '/questionnaire',
+    label: 'Questionnaire',
+    component: Questionnaire
   },
   {
     path: '/newuser',
@@ -60,9 +60,9 @@ const headerRoutes = [
     component: Info
   },
   {
-    path: '/eligibility',
-    label: 'Eligiblity',
-    component: Eligiblity
+    path: '/questionnaire',
+    label: 'Questionnaire',
+    component: Questionnaire
   }
 ]
 
