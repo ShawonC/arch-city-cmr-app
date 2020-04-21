@@ -18,6 +18,9 @@ backend/npm-debug.log
 backend/yarn-error.log
 backend/data
 backend/.DS_Store
+backend/certs
+backend/Vagrantfile
+backend/.vagrant
 
 frontend/node_modules
 node_modules
