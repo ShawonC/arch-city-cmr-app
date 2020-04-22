@@ -11,12 +11,6 @@ export default function RecordComponent() {
     const handleRecordType = (event) => {
         setRecordType(event.target.value);
     }
-
-    const [selectedDate, setSelectedDate] = React.useState(new Date());
-
-    const handleDateChange = (date) => {
-      setSelectedDate(date);
-    };
     
     return (
         <div className="questionnaire-content">
@@ -26,21 +20,6 @@ export default function RecordComponent() {
             <div style={{padding: 8}}>
                 <MuiPickersUtilsProvider utils={DateFnsUtils}>
                     <Grid container spacing={3}>
-                        <Grid item xs={3.5}>
-                            <div>RELEVANT DATE (edit)</div>
-                            <KeyboardDatePicker
-                            disableToolbar
-                            variant="inline"
-                            format="MM/dd/yyyy"
-                            margin="normal"
-                            id="date-picker-inline"
-                            value={selectedDate}
-                            onChange={handleDateChange}
-                            KeyboardButtonProps={{
-                            'aria-label': 'change date',
-                            }}
-                            />
-                        </Grid>
                         <Grid item xs={5}>
                             <div>
                                 <div className='inline-text'>If known, please indicate whether this record was {' '}</div>
@@ -54,15 +33,20 @@ export default function RecordComponent() {
                                     displayEmpty
                                     >
                                 <MenuItem value='' disabled><div className='PLACEHOLDER'>Record Type</div></MenuItem>
-                                <MenuItem value={1}>Arrest Only</MenuItem>
-                                <MenuItem value={2}>Conviction</MenuItem>
+                                <MenuItem value={0}>Arrest Only</MenuItem>
+                                <MenuItem value={1}>Conviction</MenuItem>
                             </Select>
                         </Grid>
-                        <Grid item xs={3.5}>
+                        <Grid item xs={7}>
                             <div>Jurisdiction (if known)</div>
                             <TextField 
                                 variant="outlined"
                                 style={{background: "white"}}/>
+                        </Grid>
+                        <Grid item xs={12}>
+                            <div>
+                                {recordType ?  (<Conviction/>) : (<ArrestOnly/>)}
+                            </div>
                         </Grid>
                         <Grid item xs={12}>
                         <div>Please provide any additional details</div>
@@ -77,8 +61,102 @@ export default function RecordComponent() {
                 </MuiPickersUtilsProvider>
             </div>
         </div>
-            
-    
-  
     );
+}
+
+function ArrestOnly(){
+    const [selectedDate, setSelectedDate] = React.useState(new Date());
+
+    const handleDateChange = (date) => {
+      setSelectedDate(date);
+    };
+
+    return(
+        <div style={{padding: 8}}>
+            <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                <Grid item xs={4}>
+                    <div>Date of Arrest (if known)</div>
+                    <KeyboardDatePicker
+                    disableToolbar
+                    variant="inline"
+                    format="MM/dd/yyyy"
+                    margin="normal"
+                    id="date-picker-inline"
+                    value={selectedDate}
+                    onChange={handleDateChange}
+                    KeyboardButtonProps={{
+                    'aria-label': 'change date',
+                    }}
+                    />
+                </Grid>
+            </MuiPickersUtilsProvider>
+        </div>
+        
+
+    )
+}
+
+function Conviction(){
+    const [selectedDate, setSelectedDate] = React.useState(new Date());
+
+    const handleDateChange = (date) => {
+      setSelectedDate(date);
+    };
+
+    return(
+        <div style={{padding: 8}}>
+            <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                <Grid container spacing={3}>
+                    <Grid item xs={4}>
+                        <div>Date of Arrest</div>
+                        <div>(if known)</div>
+                        <KeyboardDatePicker
+                        disableToolbar
+                        variant="inline"
+                        format="MM/dd/yyyy"
+                        margin="normal"
+                        id="date-picker-inline"
+                        value={selectedDate}
+                        onChange={handleDateChange}
+                        KeyboardButtonProps={{
+                        'aria-label': 'change date',
+                        }}
+                        />
+                    </Grid>
+                    <Grid item xs={4}>
+                        <div>Date of Conviction (if known)</div>
+                        <KeyboardDatePicker
+                        disableToolbar
+                        variant="inline"
+                        format="MM/dd/yyyy"
+                        margin="normal"
+                        id="date-picker-inline"
+                        value={selectedDate}
+                        onChange={handleDateChange}
+                        KeyboardButtonProps={{
+                        'aria-label': 'change date',
+                        }}
+                        />
+                    </Grid>
+                    <Grid item xs={4}>
+                        <div>Date of Completed Sentence (if known)</div>
+                        <KeyboardDatePicker
+                        disableToolbar
+                        variant="inline"
+                        format="MM/dd/yyyy"
+                        margin="normal"
+                        id="date-picker-inline"
+                        value={selectedDate}
+                        onChange={handleDateChange}
+                        KeyboardButtonProps={{
+                        'aria-label': 'change date',
+                        }}
+                        />
+                    </Grid>
+                </Grid>
+            </MuiPickersUtilsProvider>
+        </div>
+        
+
+    )
 }

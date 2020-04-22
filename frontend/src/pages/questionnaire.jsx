@@ -1,18 +1,34 @@
 import React, {Component} from 'react';
-import { Button, Tooltip, Select, MenuItem} from '@material-ui/core';
+import { Button} from '@material-ui/core';
 import RecordComponent from '../components/displays/qRecordType';
 import InquiryComponent from '../components/displays/inquirySelect';
 
 
 class Questionnaire extends Component{
   state = {
-    numRecords: 0
+    numSeekingRecords: 0,
+    numStlRecords: 0,
+    numMissouriRecords: 0,
+    numUSRecords: 0,
+    numNonUSRecords: 0
   }
 
   render(){
-    const records = [];
-    for (var i = 0; i < this.state.numRecords+1; i += 1){
-      records.push(<RecordComponent key={i} number={i} />);
+    const seekingRecords = [],stlRecords=[],missouriRecords=[],usRecords=[],nonusRecords=[];
+    for (var i = 0; i < this.state.numSeekingRecords+1; i += 1){
+      seekingRecords.push(<RecordComponent key={i} number={i} />);
+    };
+    for (var i = 0; i < this.state.numStlRecords; i += 1){
+      stlRecords.push(<RecordComponent key={i} number={i} />);
+    };
+    for (var i = 0; i < this.state.numMissouriRecords; i += 1){
+      missouriRecords.push(<RecordComponent key={i} number={i} />);
+    };
+    for (var i = 0; i < this.state.numUSRecords; i += 1){
+      usRecords.push(<RecordComponent key={i} number={i} />);
+    };
+    for (var i = 0; i < this.state.numNonUSRecords; i += 1){
+      nonusRecords.push(<RecordComponent key={i} number={i} />);
     };
 
 
@@ -34,12 +50,12 @@ class Questionnaire extends Component{
             1) What criminal records are you seeking to have expunged?
           </div>
           <div>
-            {records}
+            {seekingRecords}
           </div>
           <div>
             <Button variant='contained'
               fullWidth='false'
-              onClick={() => this.setState({numRecords: this.state.numRecords + 1})}>
+              onClick={() => this.setState({numSeekingRecords: this.state.numSeekingRecords + 1})}>
                 Add Another Record
             </Button>
           </div>
@@ -82,19 +98,38 @@ class Questionnaire extends Component{
           </div>
           <div className='question-main'>a) St. Louis Region</div>
           <div>
-            <RecordComponent/>
+            {stlRecords}
+          </div>
+          <div>
+            <Button variant='contained'
+              fullWidth='false'
+              onClick={() => this.setState({numStlRecords: this.state.numStlRecords + 1})}>
+                Add Another Record
+            </Button>
           </div>
           <div className='question-main'>b) Missouri (excluding St. Louis Region)</div>
           <div>
-            <RecordComponent/>
+            <Button variant='contained'
+              fullWidth='false'
+              onClick={() => this.setState({numMissouriRecords: this.state.numMissouriRecords + 1})}>
+                Add Another Record
+            </Button>
           </div>
           <div className='question-main'>c) United States (excluding Missouri)</div>
           <div>
-            <RecordComponent/>
+            <Button variant='contained'
+              fullWidth='false'
+              onClick={() => this.setState({numUSRecords: this.state.numUSRecords + 1})}>
+                Add Another Record
+            </Button>
           </div>
           <div className='question-main'>d) Outside of United States</div>
           <div>
-            <RecordComponent/>
+            <Button variant='contained'
+              fullWidth='false'
+              onClick={() => this.setState({numNonUSRecords: this.state.numNonUSRecords + 1})}>
+                Add Another Record
+            </Button>
           </div>
         </div>
       </div>
