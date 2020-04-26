@@ -2,16 +2,15 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Assignment;
 use App\Step;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
-use App\Applicant;
+use App\FrontendUser;
 use App\Http\Requests\FrontendUserFormRequest;
 
-class FrontendRequestController extends Controller
+class FrontendUserController extends Controller
 {
 
 
@@ -67,7 +66,7 @@ class FrontendRequestController extends Controller
      */
     public function store(Request $request)
     {
-        $newFrontendUser = FrontendUser::create($request->all());
+        $newFrontendUser = FrontendUser::add($request->all());
         return $newFrontendUser->id;
     }
 

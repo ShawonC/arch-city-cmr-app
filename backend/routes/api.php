@@ -31,6 +31,7 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::delete('/applicants/{applicant_id}', 'API\ApplicantController@destroy')->name('applicant.delete');
 
     Route::post('/frontend_users/add', 'API\FrontendUserController@store')->name('frontend_user.add');
+    Route::delete('/frontend_users/{frontend_user_id}', 'API\FrontendUserController@destroy')->name('frontend_user.delete');
 
     Route::get('/applicants/v1.0.0','API\ApplicantController@index_v1_0_1')->name('applicant.conviction.index_v1_0_1');
 

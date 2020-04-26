@@ -1,78 +1,78 @@
 <?php return array (
-  'barryvdh/laravel-cors' =>
+  'barryvdh/laravel-cors' => 
   array (
-    'providers' =>
+    'providers' => 
     array (
       0 => 'Barryvdh\\Cors\\ServiceProvider',
     ),
   ),
-  'beyondcode/laravel-dump-server' =>
+  'beyondcode/laravel-dump-server' => 
   array (
-    'providers' =>
+    'providers' => 
     array (
       0 => 'BeyondCode\\DumpServer\\DumpServerServiceProvider',
     ),
   ),
-  'elibyy/tcpdf-laravel' =>
+  'elibyy/tcpdf-laravel' => 
   array (
-    'providers' =>
+    'providers' => 
     array (
       0 => 'Elibyy\\TCPDF\\ServiceProvider',
     ),
-    'aliases' =>
+    'aliases' => 
     array (
       'PDF' => 'Elibyy\\TCPDF\\Facades\\TCPDF',
     ),
   ),
-  'fideloper/proxy' =>
+  'fideloper/proxy' => 
   array (
-    'providers' =>
+    'providers' => 
     array (
       0 => 'Fideloper\\Proxy\\TrustedProxyServiceProvider',
     ),
   ),
-  'laravel/passport' =>
+  'laravel/passport' => 
   array (
-    'providers' =>
+    'providers' => 
     array (
       0 => 'Laravel\\Passport\\PassportServiceProvider',
     ),
   ),
-  'laravel/tinker' =>
+  'laravel/tinker' => 
   array (
-    'providers' =>
+    'providers' => 
     array (
       0 => 'Laravel\\Tinker\\TinkerServiceProvider',
     ),
   ),
-  'maatwebsite/excel' =>
+  'maatwebsite/excel' => 
   array (
-    'providers' =>
+    'providers' => 
     array (
       0 => 'Maatwebsite\\Excel\\ExcelServiceProvider',
     ),
-    'aliases' =>
+    'aliases' => 
     array (
       'Excel' => 'Maatwebsite\\Excel\\Facades\\Excel',
     ),
   ),
-  'nesbot/carbon' =>
+  'nesbot/carbon' => 
   array (
-    'providers' =>
+    'providers' => 
     array (
       0 => 'Carbon\\Laravel\\ServiceProvider',
     ),
   ),
-  'nunomaduro/collision' =>
+  'nunomaduro/collision' => 
   array (
-    'providers' =>
+    'providers' => 
     array (
       0 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
     ),
   ),
-  'spatie/laravel-permission' =>
+  'spatie/laravel-permission' => 
   array (
-    'providers' =>
+    'providers' => 
     array (
       0 => 'Spatie\\Permission\\PermissionServiceProvider',
     ),

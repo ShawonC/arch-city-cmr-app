@@ -101,9 +101,6 @@ class User extends Authenticatable
         ->paginate($per_page);
     }
 
-
-
-
     /**
      * Create base query to be used by Grid, Download, and PDF
      *
