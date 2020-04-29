@@ -1,8 +1,15 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { Box, TextField, Grid, Button} from '@material-ui/core';
+import { withRouter } from 'react-router-dom';
 
+class NewUser extends Component{
 
-export default function NewUser() {
+  redirect(path){
+    this.props.history.push(path)
+  }
+  
+  render(){
+
 	return (
     <Box className='new-user'
       border={1}>
@@ -35,11 +42,15 @@ export default function NewUser() {
           <Grid item xs={2}></Grid>
           <Grid item xs={12}>
             <Button variant='text'
-              fullWidth='true'>
+              fullWidth='true'
+              onClick={() => this.redirect('/login')}>
               Sign in instead
             </Button>
           </Grid>
         </Grid>
-    </Box>
-  );
+      </Box>
+    );
+  };
 };
+
+export default withRouter(NewUser);

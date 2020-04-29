@@ -6,9 +6,7 @@ import { withRouter } from 'react-router-dom';
 
 class Login extends Component{
 
- // <Route newUserPath='/newuser' component={newUser}/>
-
-  newUserRoute(path){
+  redirect(path){
     this.props.history.push(path)
   }
 
@@ -46,7 +44,7 @@ class Login extends Component{
             <Grid item xs={6}>
               <Button variant='text'
                 fullWidth='true'
-                onClick={() => this.newUserRoute('/newuser')}>
+                onClick={() => this.redirect('/newuser')}>
                 Create Account
               </Button>
             </Grid>

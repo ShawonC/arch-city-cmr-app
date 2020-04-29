@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Step from '../components/displays/step';
 import NavBar from '../components/displays/sideNav';
