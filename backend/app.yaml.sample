@@ -1,3 +1,4 @@
+# Replace all entries inside <> with your data
 runtime: php
 env: flex
 
@@ -9,7 +10,7 @@ skip_files:
 
 env_variables:
   APP_LOG: errorlog
-  APP_KEY: base64:iLMIcmonvTjgFtTmnpO/AJS/YI8k7B7y2MMEJ476oIE=
+  APP_KEY: <app-key>
   APP_STORAGE: /tmp
   VIEW_COMPILED_PATH: /tmp
   # STORAGE_DIR: /tmp
@@ -18,10 +19,10 @@ env_variables:
   ## Cloudsql connection information
   DB_CONNECTION: mysql
   DB_HOST: localhost
-  DB_DATABASE: laravel
-  DB_USERNAME: root
-  DB_PASSWORD: l7HiAzk73CFi0kLb
-  DB_SOCKET: /cloudsql/arch-city-test:us-central1:arch-city-db
+  DB_DATABASE: <db-name>
+  DB_USERNAME: <db-user>
+  DB_PASSWORD: <db-password>
+  DB_SOCKET: /cloudsql/<database_instance_name>
 
 beta_settings:
-  cloud_sql_instances: arch-city-test:us-central1:arch-city-db
+  cloud_sql_instances: <database_instance_name>
