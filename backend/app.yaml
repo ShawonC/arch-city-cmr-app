@@ -1,0 +1,27 @@
+runtime: php
+env: flex
+
+runtime_config:
+  document_root: public
+
+skip_files:
+  - .env
+
+env_variables:
+  APP_LOG: errorlog
+  APP_KEY: base64:iLMIcmonvTjgFtTmnpO/AJS/YI8k7B7y2MMEJ476oIE=
+  APP_STORAGE: /tmp
+  VIEW_COMPILED_PATH: /tmp
+  # STORAGE_DIR: /tmp
+  CACHE_DRIVER: file
+  SESSION_DRIVER: database
+  ## Cloudsql connection information
+  DB_CONNECTION: mysql
+  DB_HOST: localhost
+  DB_DATABASE: laravel
+  DB_USERNAME: root
+  DB_PASSWORD: l7HiAzk73CFi0kLb
+  DB_SOCKET: /cloudsql/arch-city-test:us-central1:arch-city-db
+
+beta_settings:
+  cloud_sql_instances: arch-city-test:us-central1:arch-city-db
