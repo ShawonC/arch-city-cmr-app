@@ -4,13 +4,13 @@ The Clear My Record backend is focused on providing a backend management solutio
 
 **Note: Any arguments you should pass your own values into will be wrapped in <>**
 
-## App Engine
+## Deployment
 
-### Dependencies
+### App Engine
+
+#### Dependencies
 - gcloud
 - mysql client
-
-### Deployment
 
 Currently this application is designed to be deploy via Google App Engine. You can deploy the app by doing the following:
 
@@ -34,23 +34,26 @@ Use the Google [cloudsql_proxy](https://cloud.google.com/sql/docs/mysql/quicksta
 `cloud_sql_proxy -instances=<YOUR_INSTANCE_CONNECTION_NAME>=tcp:3306`
 
 Open another terminal window and create a database in your MySql instance (You will be prompted for the root user password you set up when you created the instance):
-`mysql -h 127.0.0.1 -u root -p -e "CREATE DATABASE laravel;"`
+`mysql -h 127.0.0.1 -u root -p -e "CREATE DATABASE <DATABASE_NAME>;"`
 
-Create a session table for the database, and run the migration command to populate all tables needed for the application:
-`php artisan session:table`
-`DB_DATABASE=laravel DB_USERNAME=root DB_PASSWORD=YOUR_DB_PASSWORD php artisan migrate --force`
+Run the migration command to populate all tables needed for the application:
+`DB_DATABASE=<DB_NAME> DB_USERNAME=<USERNAME> DB_PASSWORD=YOUR_DB_PASSWORD php artisan migrate --force`
+
+Set up the user account(s) you want to be created initially. The `UserDatabaseSeeder.php` file is set up to create a base admin user and a frontend user for integrating a frontend that creates applicants. Set the `USER_` and `FRONTEND_` values in your .env file (copied from the .env.example file in this repo) and they will be picked up when you seed the database in the next step. If you don't need a frontend user, comment out the code that creates it in the `UserDatabaseSeeder.php` file.
+
+Seed the Permission, User, and Statute databases:
+`DB_DATABASE=<DB_NAME> DB_USERNAME=<USERNAME> DB_PASSWORD=YOUR_DB_PASSWORD php artisan db:seed`
 
 Deploy the application by running the following in the directory:
 `gcloud app deploy`
 
-## Docker Deployment
+### Docker Deployment
 
-### Dependencies
+#### Dependencies
 You will need the following dependencies:
 - docker
 - docker-compose
 
-### Deployment
 This application can also be deployed via docker with docker-compose. You can find the dockerfiles for the app (app.dockerfile) and web (web.dockerfile) in the dockerfiles directory.
 
 Build the images locally. You can do this with the following commands:
@@ -62,11 +65,11 @@ You can then use the self signed certs in the `certs` directory of this reposito
 
 You ten can reach the app at 0.0.0.0 in your browser.
 
-## Local testing with Vagrant
+### Local testing with Vagrant
 
 TO BE FILLED IN
 
-## Testing in macOS
+### Testing in macOS
 
 These instructions assume you have git, npm,
 composer, php, mysql installed,
@@ -81,7 +84,7 @@ Adjust:
 3. `MAIL_` should be adjusted if you are going to test Forgot password or other functions that mail.
 3. If you regenerate Passport Keys you man need to adjust `PASSWORD_CLIENT_ID`
 
-### Install the dependencies
+#### Install the dependencies
 
 ```
 composer install
@@ -89,22 +92,14 @@ npm install
 npm run dev
 ```
 
-### Crate database tables and seed them
+#### Crate database tables and seed them
 
 ```
 php artisan migrate
 php artisan db:seed
 ```
 
-### Setup Passport
-
-You can skip this if you are not going to use the API.
-
-````
-php artisan passport:keys --force
-````
-
-### Setup hosting
+#### Setup hosting
 
 You can setup any `apache` hosting environment you would like.
 
@@ -116,7 +111,36 @@ valet link
 valet open
 ```
 
-You should now beable to login as `paulb@savagesoft.com`  Using the password you set in the `.env`
+You should now beable to login as `<email@example.com`  Using the password you set in the `.env`
 
+## Setting up the API
+
+Laravel uses a built in API controller called Passport. The following steps will walk you through setting up Passport for the application and generating a token to make calls to the API.
+
+First, generate encrpytion keys for the passport service:
+`php artisan passport:keys --force`
+
+Then, install passport into the application and database:
+`DB_DATABASE=<DB_NAME> DB_USERNAME=<USERNAME> DB_PASSWORD=YOUR_DB_PASSWORD php artisan passport:install --force`
+
+Next, login to the app database via php's tinker command so you can create an API token:
+`DB_DATABASE=<DB_NAME> DB_USERNAME=<USERNAME> DB_PASSWORD=YOUR_DB_PASSWORD php artisan tinker`
+
+You will now be in a command prompt. We will run the following commands to generate a token for your service user account:
+
+Find the user you want to generate the token under:
+`User::find(<id>)`
+For example, I would run `User::find(1)` to get the user with an id of 1.
+
+Once you've figured out the user ID for the user you want to generate a token under, lets set that user to a variable we can use in our next commands:
+
+`$user = User::find(<id>)`
+
+Next, generate the token with a short name description for what the token is for. For example, of local testing you might use 'localtest':
+`$token = $user->createToken('<Description>)->accessToken`
+
+The previous command will print an access token to the console that you can user to make api requests to the app.
+
+Make sure when you make your requests that you append `api` to the base url, before the endpoint. For example, if you want to list all applicants in the database, you would use the url `https://<base_url>/api/applicants`
 
 
