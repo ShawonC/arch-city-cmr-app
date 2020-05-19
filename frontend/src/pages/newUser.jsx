@@ -1,8 +1,37 @@
 import React, {Component} from 'react';
-import { Box, TextField, Grid, Button} from '@material-ui/core';
+import { Box, TextField, Grid, Button, Paper} from '@material-ui/core';
 import { withRouter } from 'react-router-dom';
+import { fire } from '../data/firebase'
 
 class NewUser extends Component{
+  state = {
+    email: '',
+    password: '',
+    errorMessageLogin: '',
+    errorMessageSignup: ''
+  }
+
+
+  signup = e => {
+    e.preventDefault();
+    fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
+    .then((u) => {
+      // db.collection(u.user.uid).doc('1')
+    })
+    .catch((error) => {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        this.setState({errorMessageSignup: errorMessage})
+        console.log(errorCode + ': ' + errorMessage)
+       
+    });
+       
+  };
+
+  handleChange = e => {
+    this.setState({[e.target.id]: e.target.value})
+  }
 
   redirect(path){
     this.props.history.push(path)
@@ -11,22 +40,27 @@ class NewUser extends Component{
   render(){
 
 	return (
-    <Box className='new-user'
-      border={1}>
+    <Paper className='new-user'
+      elevation={3}>
         <Grid container spacing={3}>
           <Grid item xs={12}>
           <TextField className='login-box'
-            placeholder='Username'
+            id='email'
+            placeholder='Email'
             variant='outlined'
-            fullWidth='true'>
+            fullWidth='true'
+            type='email'
+            onChange={this.handleChange}>
               placeholder
           </TextField>
           </Grid>
           <Grid item xs={12}>
             <TextField className='login-box'
+              id='password'
               placeholder='Password'
               variant='outlined'
-              fullWidth='true'>
+              fullWidth='true'
+              onChange={this.handleChange}>
                 placeholder
             </TextField>
           </Grid>
@@ -35,6 +69,7 @@ class NewUser extends Component{
             <Button fullWidth='true'
               variant="contained"
               color="primary"
+              onClick={this.signup}
               >
               Create User
             </Button>
@@ -48,7 +83,7 @@ class NewUser extends Component{
             </Button>
           </Grid>
         </Grid>
-      </Box>
+      </Paper>
     );
   };
 };

@@ -4,7 +4,7 @@
 
 html, body, div { padding: 0px; margin: 0px; }
 h1, h2, h3, h4, h5 { 
-    font-family: 'Merriweather', serif;
+    font-family: 'Roboto', sans-serif;
     text-align: left; 
     margin: 12px; 
 }
@@ -22,8 +22,18 @@ h5 { font-size: 16px; }
 
 body{
     background-color: #ffffff;
+    overflow: overlay;
 }
 
+body::-webkit-scrollbar {
+    width: 7px;               /* width of the entire scrollbar */
+  }
+ 
+  body::-webkit-scrollbar-thumb {
+    background-color: #bebebe;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+      /* creates padding around scroll thumb */
+  }
 
 .app {
     margin: 0px auto;
@@ -37,6 +47,7 @@ body{
     top: 0;
     left: 0;
     padding-left: 16px;
+    padding-right: 16px;
     background-color: rgb(14, 33, 44);
     color: #ffffff;
     position: fixed;

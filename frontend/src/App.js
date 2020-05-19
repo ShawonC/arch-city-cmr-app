@@ -16,6 +16,8 @@ import dashboard from './pages/dashboard';
 import NoMatch from './pages/noMatch';
 import NewUser from './pages/newUser'
 
+import { Button } from '@material-ui/core';
+
 const homePath = '/';
 
 // Add new page components here:
@@ -31,7 +33,7 @@ const routes = [
     component: dashboard
   },
   {
-    path: '/info',
+    path: '/',
     label: 'Info',
     component: Info
   },
@@ -55,7 +57,7 @@ const headerRoutes = [
     component: dashboard
   },
   {
-    path: '/info',
+    path: '/',
     label: 'Info',
     component: Info
   },
@@ -81,6 +83,12 @@ export default function App() {
                 label={route.label}
               />
             ))}
+          </div>
+          <div align='right'>
+            <Button variant='contained'
+            href='/login'>
+              Login/Signup
+            </Button>
           </div>
         </div>
         <ScrollToTop />
