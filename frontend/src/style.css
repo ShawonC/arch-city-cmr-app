@@ -236,8 +236,9 @@ body{
     font-family: 'Merriweather', serif;
     font-size: 20px;
     font-weight: bold;
-    padding: 12px;
+    padding: 12px 12px 0px 12px;
 }
+
 
 .inline-text{
     width: fit-content;
@@ -245,6 +246,39 @@ body{
     padding: 2px;
 }
 
+.disclaimer-text{
+    font-size: 12px;
+    padding: 12px;
+}
+
 .hover-text{
     color: rgb(201, 149, 54);
 }
+
+.prelim-subtext{
+    text-align: center;
+    font-size: 16px;
+    font-family: 'Merriweather', serif;
+    font-weight: bold;
+    color: blue;
+}
+
+.prelim-question-sub{
+    text-align: left;
+    font-family: 'Merriweather', serif;
+    font-size: 17px;
+    font-weight: bold;
+    padding: 0px 48px 0px 48px;
+    list-style-type: lower-alpha;
+}
+
+.prelim-selector{
+   padding: 0px 0px 20px 72px;
+}
+
+.prelim-clarity-text{
+    font-weight: normal;
+    font-style: italic;
+    font-size: 16px;
+}
+

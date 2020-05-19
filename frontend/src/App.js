@@ -14,7 +14,8 @@ import Questionnaire from './pages/questionnaire';
 import Login from './pages/login';
 import dashboard from './pages/dashboard';
 import NoMatch from './pages/noMatch';
-import NewUser from './pages/newUser'
+import NewUser from './pages/newUser';
+import Prequestionnaire from './pages/prequestionnaire';
 
 const homePath = '/';
 
@@ -44,8 +45,12 @@ const routes = [
     path: '/newuser',
     label: 'New User',
     component: NewUser
+  },
+  {
+    path: '/prequestionnaire',
+    label: 'Prequestionnaire',
+    component: Prequestionnaire
   }
-  
 ]
 
 const headerRoutes = [
@@ -63,6 +68,11 @@ const headerRoutes = [
     path: '/questionnaire',
     label: 'Questionnaire',
     component: Questionnaire
+  },
+  {
+    path: '/prequestionnaire',
+    label: 'Prequestionnaire',
+    component: Prequestionnaire
   }
 ]
 
