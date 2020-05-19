@@ -8,24 +8,91 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 export default function dashboard() {
 	return (
     <div className='content'>
-      <div className='contentHeader'>
-        Welcome to your dashboard!
+      <div className='release'>
+        <ExpansionPanel>
+          <ExpansionPanelSummary
+            expandIcon={<ExpandMoreIcon />}
+            
+            
+          >
+            <h3>Expansion Panel 1</h3>
+          </ExpansionPanelSummary>
+          <ExpansionPanelDetails>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
+              sit amet blandit leo lobortis eget.
+            </p>
+          </ExpansionPanelDetails>
+        </ExpansionPanel>
       </div>
-      <ExpansionPanel>
-        <ExpansionPanelSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel1a-content"
-          id="panel1a-header"
-        >
-          <h3>Expansion Panel 1</h3>
-        </ExpansionPanelSummary>
-        <ExpansionPanelDetails>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-            sit amet blandit leo lobortis eget.
-          </p>
-        </ExpansionPanelDetails>
-      </ExpansionPanel>
+      <div className='release'>
+        <ExpansionPanel>
+          <ExpansionPanelSummary
+            expandIcon={<ExpandMoreIcon />}
+            
+            
+          >
+            <h3>Expansion Panel 1</h3>
+          </ExpansionPanelSummary>
+          <ExpansionPanelDetails>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
+              sit amet blandit leo lobortis eget.
+            </p>
+          </ExpansionPanelDetails>
+        </ExpansionPanel>
+      </div>
+      <div className='release'>
+        <ExpansionPanel>
+          <ExpansionPanelSummary
+            expandIcon={<ExpandMoreIcon />}
+            
+            
+          >
+            <h3>Expansion Panel 1</h3>
+          </ExpansionPanelSummary>
+          <ExpansionPanelDetails>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
+              sit amet blandit leo lobortis eget.
+            </p>
+          </ExpansionPanelDetails>
+        </ExpansionPanel>
+      </div>
+      <div className='release'>
+        <ExpansionPanel>
+          <ExpansionPanelSummary
+            expandIcon={<ExpandMoreIcon />}
+            
+            
+          >
+            <h3>Expansion Panel 1</h3>
+          </ExpansionPanelSummary>
+          <ExpansionPanelDetails>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
+              sit amet blandit leo lobortis eget.
+            </p>
+          </ExpansionPanelDetails>
+        </ExpansionPanel>
+      </div>
+      <div className='release'>
+        <ExpansionPanel>
+          <ExpansionPanelSummary
+            expandIcon={<ExpandMoreIcon />}
+            
+            
+          >
+            <h3>Expansion Panel 1</h3>
+          </ExpansionPanelSummary>
+          <ExpansionPanelDetails>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
+              sit amet blandit leo lobortis eget.
+            </p>
+          </ExpansionPanelDetails>
+        </ExpansionPanel>
+      </div>
       
     </div>
   );
