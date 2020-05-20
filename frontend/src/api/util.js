@@ -7,5 +7,5 @@ export const headers = (token) => {
 };
 
 export const url = (endpoint) => {
-    return `${process.env.API_BASE_URL}${endpoint}`;
+    return `${process.env.REACT_APP_API_BASE_URL}${endpoint}`;
 };
