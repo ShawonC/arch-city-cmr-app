@@ -1,8 +1,9 @@
 # CMR-Client
 
 ## Getting Started
-- run "npm install" to download all dependencies.
-- If you are new to React, read the "React Docs" documentation 
+- Run "npm install" to download all dependencies.
+- Run "npm start" to run the app in the development mode
+- If you are new to React, read the [React Docs](https://facebook.github.io/create-react-app/docs/getting-started) documentation
 
 ## Clear my record
 The planning doc for this project: https://docs.google.com/document/d/1k1rMepmTuitQGhJRTYo90jgaCXazj7RT801871MmOFo/edit?usp=sharing
