@@ -1,12 +1,6 @@
 {
     "private": true,
     "scripts": {
-        "prepare": "npm run gcp-build",
-        "pretest": "npm run gcp-build",
-        "test": "mocha test/*.test.js --exit",
-        "posttest": "npm run lint",
-        "gcp-build": "npm run cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "deploy": "gcloud app deploy",
         "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
         "watch": "npm run development -- --watch",
         "watch-poll": "npm run watch -- --watch-poll",
@@ -30,7 +24,6 @@
         "stylus": "^0.54.7",
         "stylus-loader": "^3.0.2",
         "vue": "^2.5.17",
-        "prepare": "npm run gcp-build",
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
