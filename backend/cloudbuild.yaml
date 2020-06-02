@@ -1,10 +1,15 @@
 steps:
 - name: node
   entrypoint: npm
-  args: ["--prefix", "backend/", "install"]
+  args: ["install"]
+  dir: "backend/"
+  # args: ["--prefix", "backend/", "install"]
 - name: node
   entrypoint: npm
-  args: ["--prefix", "backend", "run", "production"]
+  args: ["run", "production"]
+  dir: "backend/"
+  # args: ["--prefix", "backend", "run", "production"]
 - name: "gcr.io/cloud-builders/gcloud"
-  args: ["app", "deploy", "backend/app.yaml"]
+  args: ["app", "deploy"]
+  dir: "backend/"
 timeout: "1600s"
