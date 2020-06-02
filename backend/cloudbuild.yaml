@@ -10,6 +10,6 @@ steps:
   dir: "backend/"
   # args: ["--prefix", "backend", "run", "production"]
 - name: "gcr.io/cloud-builders/gcloud"
-  args: ["app", "deploy"]
-  dir: "backend/"
+  args: ["app", "deploy", "backend/app.yaml"]
+  # dir: "./backend/"
 timeout: "1600s"
