@@ -8,7 +8,6 @@
     ],
     "license": "MIT",
     "require": {
-        "php": "^7.1.3",
         "barryvdh/laravel-cors": "^0.11.3",
         "bjeavons/zxcvbn-php": "^0.4.0",
         "doctrine/dbal": "^2.9",
@@ -58,8 +57,9 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {
-        "gcp-build": [
-            "composer install"
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover --ansi"
         ],
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
@@ -69,6 +69,7 @@
         ],
         "post-install-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postInstall",
+            "chmod -R 755 bootstrap\/cache",
             "php artisan cache:clear"
         ]
     }
