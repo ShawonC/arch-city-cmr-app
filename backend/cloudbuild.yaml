@@ -18,6 +18,9 @@ steps:
     --plaintext-file=app.yaml
   ]
   dir: "backend/"
+- name: ubuntu
+  args: ["mkdir", "output"]
+  dir: "backend/"
 - name: "gcr.io/cloud-builders/gcloud"
   args: ["app", "deploy"]
   dir: "backend/"
