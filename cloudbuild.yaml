@@ -1,12 +1,12 @@
 steps:
-- name: node
-  entrypoint: npm
-  args: ["install"]
-  # dir: "backend/"
-- name: node
-  entrypoint: npm
-  args: ["run", "production"]
-  # dir: "backend/"
+# - name: node
+#   entrypoint: npm
+#   args: ["install"]
+#   # dir: "backend/"
+# - name: node
+#   entrypoint: npm
+#   args: ["run", "production"]
+#   # dir: "backend/"
 - name: "gcr.io/cloud-builders/gcloud"
   args: [
     "kms",
